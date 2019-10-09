@@ -24,7 +24,7 @@ void * vida(void *id){
         pthread_mutex_lock(&tenedores[tid]);
         pthread_mutex_lock(&tenedores[(tid+1) % NUM_FILOS]);
         //COMER
-        printf("Soy el hilo %ld, y estoy pensando \n", tid);
+        printf("Soy el hilo %ld, y estoy comiendo \n", tid);
         actividad();
         pthread_mutex_unlock(&tenedores[tid]);
         pthread_mutex_unlock(&tenedores[(tid+1) % NUM_FILOS]);
@@ -33,7 +33,7 @@ void * vida(void *id){
         pthread_mutex_lock(&tenedores[(tid+1) % NUM_FILOS]);
         pthread_mutex_lock(&tenedores[tid]);
         //COMER
-        printf("Soy el hilo %ld, y estoy pensando \n", tid);
+        printf("Soy el hilo %ld, y estoy comiendo \n", tid);
         actividad();
         pthread_mutex_unlock(&tenedores[tid]);
         pthread_mutex_unlock(&tenedores[(tid+1) % NUM_FILOS]);
